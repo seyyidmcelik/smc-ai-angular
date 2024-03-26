@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="user-container">
+    <app-popup></app-popup>
+    <div class="left-menu">
+        <nav>
+            <a routerLink="/user/conversation" routerLinkActive="active">
+                <img src="/assets/conversation.svg" width="25" alt="SMC with ATOM">
+                <span>Conversation</span>
+            </a>
+            <a routerLink="/user/music" routerLinkActive="active">
+                <img src="/assets/music.svg" width="25" alt="SMC with ATOM">
+                <span>Music Generation</span>
+            </a>
+            <a routerLink="/user/image" routerLinkActive="active">
+                <img src="/assets/brush.svg" width="25" alt="SMC with ATOM">
+                <span>Image Generation</span>    
+            </a>
+            <a routerLink="/user/code" routerLinkActive="active">
+                <img src="/assets/code.svg" width="25" alt="SMC with ATOM">
+                <span>Code Generation</span>
+            </a>
+        </nav>
+    </div>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>

@@ -1,0 +1,15 @@
+<header>
+    <div class="logo">
+        <a [routerLink]="currentUser ? ['/user']:null">
+            <span>SMC with</span>
+            <img src="/assets/atom-svgrepo-com.svg" width="25" alt="SMC with ATOM">
+        </a>
+    </div>
+    <nav>
+        <a *ngIf="!currentUser" routerLink="/login">Explore</a>
+        <div class="user-icon" *ngIf="currentUser">
+            <img [src]="currentUser.photoURL" width="25" height="25" [alt]="currentUser.displayName"
+                (click)="popupToggle()">
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,155 @@
+main {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-color: #f4f4f4;
+    flex-grow: 2;
+}
+
+main * {
+    font-family: none;
+}
+
+h1 {
+    background: linear-gradient(to bottom right, #FF4081, #536DFE);
+    padding: 7px 14px;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: 0;
+}
+
+#box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #FF4081, #536DFE);
+    animation: 2s ease-out forwards move, 5s linear infinite resize;
+}
+
+.animated-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-text{
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 323px; /* Set the desired width */
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "";
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #f4f4f4;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: .8s infinite cursor, 20s infinite typing;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid rgba(255, 127, 80, 0);
+    }
+}
+
+@keyframes words {
+    0%,25% {
+        content: "Conversation";
+    }
+
+    26%,50% {
+        content: "Music Generation";
+    }
+
+    51%,75% {
+        content: "Image Generation";
+    }
+
+    76%,100% {
+        content: "Code Generation";
+    }
+}
+
+@keyframes typing {
+    0%, 25%, 50%, 75%, 100% {
+        width: calc(100% + 8px); /* Hide the cursor at intervals */
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        width: 0; /* Show the cursor at intervals */
+    }
+}
+
+@keyframes move {
+    to {
+        top: 50px;
+        left: 50px;
+        transform: none;
+    }
+}
+
+@keyframes resize {
+    0%,
+    100% {
+        clip-path: polygon(70% 100%, 0 31%, 100% 47%);
+    }
+
+    50% {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    75% {
+        clip-path: polygon(0 0, 0% 100%, 100% 47%);
+    }
+}
+
+@media (max-width: 1023px) {
+    main {
+        height: calc(100vh - 100px);
+        padding: 0 100px;
+        text-align: center;
+    }
+}
+
+@media (max-width:767px) {
+    main * {
+        font-family: none;
+    }
+
+    main {
+        height: calc(100vh - 50px);
+        font-size: 14px;
+        padding: 0 50px;
+    }
+
+    h1{
+        width: 100%;
+        font-size: 19px;
+    }
+
+    p:nth-of-type(1){
+        padding-top: 15px;
+    }
+
+    p:nth-of-type(2){
+        padding-bottom: 35px;
+    }
+}

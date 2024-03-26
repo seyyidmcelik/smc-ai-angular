@@ -1,0 +1,17 @@
+<div class="popup" [ngClass]="isPopupActive ? '' : 'active'">
+    <div class="close" (click)="closePopup()">
+        <img src="/assets/close-circle-svgrepo-com.svg" alt="">
+    </div>
+    <div>
+        <div class="user-image-container">
+            <img class="user-image" [src]="currentUser?.photoURL" [alt]="currentUser?.displayName">
+        </div>
+        <div class="username">Hi, {{currentUser?.displayName}}</div>
+    </div>
+    <div class="sign-out-container" (click)="handleSignOut()">
+        <div class="svg-container">
+            <img src="/assets/exit-svgrepo-com.svg" width="15" alt="exit icon">
+        </div>
+        <div><span>Sign out</span></div>
+    </div>
+</div>

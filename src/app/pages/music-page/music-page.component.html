@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="title">
+        <img src="/assets/music.svg" width="25" alt="SMC with ATOM">
+        <h1>Groove to Melodies that Move You</h1>
+    </div>
+    <div class="control">
+        <div class="control-item">
+            <input type="text" (keyup.enter)="prompt.length > 0 && create()" [(ngModel)]="prompt"
+                placeholder="80s pop track with bassy drums and synth" [disabled]="isLoading">
+            <button (click)="create()" [disabled]="isLoading">
+                <img src="/assets/triangle.svg" width="20" alt="triangle button">
+            </button>
+        </div>
+    </div>
+    <div class="content" *ngIf="audioSrc.length > 0 else loading">
+        <div *ngIf="isLoading">Loading...</div>
+        <div class="audio-container">
+            <audio controls>
+                <source [src]="audioSrc">
+            </audio>
+            <a [href]="audioSrc" [download]="'SMC Music - '+ prompt">Download</a>
+        </div>
+    </div>
+    <ng-template #loading>{{isLoading ? 'Loading...' : ''}}</ng-template>
+</div>

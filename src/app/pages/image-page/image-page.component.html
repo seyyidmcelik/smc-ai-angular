@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="title">
+        <img src="/assets/brush.svg" width="25" alt="SMC with ATOM">
+        <h1>Marvel at Artistic Wonders</h1>
+    </div>
+    <div class="control">
+        <div class="control-item">
+            <input type="text" [disabled]="isLoading" [(ngModel)]="text" (keyup.enter)="text.length > 0 && create()" [disabled]="isLoading"
+                placeholder="Type to generate image">
+            <button (click)="create()" [disabled]="isLoading">
+                <img src="/assets/triangle.svg" width="20" alt="triangle button">
+            </button>
+        </div>
+    </div>
+    <div class="content" *ngIf="imgSrc.length > 0 else loading">
+        <div *ngIf="isLoading">Loading...</div>
+        <div class="img-container" *ngIf="!isLoading">
+            <img [src]="imgSrc" alt="Image by SMC">
+            <a [href]="imgSrc" [download]="'SMC Image - '+text">Download</a>
+        </div>
+    </div>
+    <ng-template #loading>{{isLoading ? 'Loading...' : ''}}</ng-template>
+</div>

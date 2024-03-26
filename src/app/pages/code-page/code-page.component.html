@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="title">
+        <img src="/assets/code.svg" width="25" alt="SMC with ATOM">
+        <h1>Code Your Dreams into Reality</h1>
+    </div>
+    <div class="content" #content *ngIf="data.length > 0">
+        <div class="content-item" *ngFor="let item of data; index as i">
+            <code>{{ item }}</code>
+        </div>
+        <div>{{ isLoading ? 'Loading...' : '' }}</div>
+    </div>
+    <div class="control">
+        <div class="control-item">
+            <input type="text" #inputField [(ngModel)]="userInput" (keyup.enter)="userInput.length > 0 && sendMessage()" [disabled]="isLoading"
+                placeholder="Type to start coding">
+            <button (click)="sendMessage()" [disabled]="isLoading">
+                <img src="/assets/triangle.svg" width="20" alt="triangle button">
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 30px;
+    box-sizing: border-box;
+    gap: 15px;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.title img {
+    margin-right: 5px;
+    width: 40px;
+}
+
+.control {
+    width: 90%;
+}
+
+.control-item {
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.control input {
+    width: 100%;
+    max-width: 700px;
+    padding: 5px 25px 5px 7px;
+    border: 2px solid #817878;
+    border-radius: 5px;
+    outline: none;
+}
+
+.control button {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    right: 25px;
+    padding: 0;
+}
+
+.content {
+    height: auto;
+}
+
+.audio-container {
+    width: 100%;
+    margin: 0 auto;
+    max-height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.audio-container a {
+    width: max-content;
+    height: max-content;
+    display: block;
+    text-align: center;
+    background: #dedede;
+    padding: 7px 14px;
+    border-radius: 5px;
+    color: #49499D;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.audio-container a:hover {
+    color: rgba(73, 73, 157, 0.8);
+}
+
+@media (min-width: 1920px){
+    .container {
+        max-width: 100%;
+    }
+
+    .control-item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        justify-content: flex-start;
+    }
+
+    .title {
+        width: 90%;
+    }
+
+    .title h1 {
+        font-size: 17px;
+    }
+
+    .title img {
+        width: 30px;
+    }
+
+    .control {
+        margin-left: 20px;
+    }
+
+    .content {
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .audio-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .audio-container audio {
+        width: 100%;
+    }
+
+    .audio-container a {
+        width: 80%;
+        margin: auto;
+    }
+}

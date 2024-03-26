@@ -1,0 +1,116 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.logo {
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    animation: logoAnim 70s infinite linear;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+button {
+    width: max-content;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(184, 184, 184, 0.3);
+    border: 1px solid rgba(184, 184, 184, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(184, 184, 184, 0.5);
+}
+
+button img {
+    width: auto;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+#output {
+    margin-top: 20px;
+    color: #333;
+}
+
+.register-link {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    background: linear-gradient(to bottom right, #FF4081, #536DFE);
+    padding: 7px 14px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+@keyframes logoAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 20px;
+    }
+}
